@@ -12,4 +12,9 @@ public class Pessoa: IPessoa
         Nome = nome;
         Sobrenome = sobrenome;
     }
+
+    public override string ToString()
+    {
+        return $"Nome: {Nome}, Sobrenome: {Sobrenome}";
+    }
 }
