@@ -5,7 +5,7 @@ namespace Models;
 public class Suite : ISuite
 {
 
-    public string _tipoSuite;
+    private string _tipoSuite;
     private int _capacidade;
     private decimal _valorDiaria;
     public string TipoSuite
