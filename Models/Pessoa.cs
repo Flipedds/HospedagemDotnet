@@ -2,10 +2,22 @@ using Interfaces;
 
 namespace Models;
 
-public class Pessoa: IPessoa
+public class Pessoa : IPessoa
 {
-    public string Nome { get; set; }
-    public string Sobrenome { get; set; }
+
+    private string _nome;
+    private string _sobrenome;
+
+    public string Nome
+    {
+        get => _nome;
+        set => _nome = value != "" ? _nome = value : throw new ArgumentException("O nome não pode ser vazio!");
+    }
+    public string Sobrenome
+    {
+        get => _sobrenome;
+        set =>  _sobrenome = value != "" ? _sobrenome = value : throw new ArgumentException("O sobrenome não pode ser vazio!");
+    }
 
     public Pessoa(string nome, string sobrenome)
     {
