@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using Models;
 
 string menu =
@@ -7,7 +8,11 @@ string menu =
             "3 - Listar Reservas \n" +
             "4 - Encerrar";
 
-IHotel hotel = new Hotel();
+var serviceProvider = new ServiceCollection()
+    .AddSingleton<IHotel, Hotel>()
+    .BuildServiceProvider();
+
+var hotel = serviceProvider.GetRequiredService<IHotel>();
 
 bool loop = true;
 
