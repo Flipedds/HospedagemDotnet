@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Interfaces;
+using Models;
 
 string menu =
             "1 - Reservar suite \n" +
@@ -6,7 +7,7 @@ string menu =
             "3 - Listar Reservas \n" +
             "4 - Encerrar";
 
-Hotel hotel = new();
+IHotel hotel = new Hotel();
 
 bool loop = true;
 
