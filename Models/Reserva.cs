@@ -6,7 +6,15 @@ public class Reserva : IReserva<List<Pessoa>, Suite>
 {
     public List<Pessoa> Hospedes { get; set; }
     public Suite Suite { get; set; }
-    public int DiasReservados { get; set; }
+
+    private int _diasReservados;
+    public int DiasReservados
+    {
+        get => _diasReservados;
+        set => _diasReservados = value > 0 ? _diasReservados = value :
+        throw
+        new ArgumentException("Dias de reserva deve ser maior que 0 !");
+    }
 
     public Reserva(int diasReservados)
     {
@@ -34,8 +42,8 @@ public class Reserva : IReserva<List<Pessoa>, Suite>
         {
             decimal valorDesconto = (valorTotal * 10) / 100;
             return valorTotal - valorDesconto;
-            
+
         }
-        return  valorTotal;
+        return valorTotal;
     }
 }
