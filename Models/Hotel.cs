@@ -20,6 +20,7 @@ public class Hotel : IHotel
             for (int i = 0; i < ReservasDoHotel.Count; i++)
             {
                 Reserva reserva = ReservasDoHotel[i];
+                Console.WriteLine($"Reserva Nº {i + 1} \n");
                 Console.WriteLine("Hospedes: ");
                 for (int j = 0; j < reserva.Hospedes.Count; j++)
                 {
@@ -28,8 +29,7 @@ public class Hotel : IHotel
                 Console.WriteLine($"Suite: {reserva.Suite.TipoSuite}");
                 Console.WriteLine($"Quantidade de hospedes: {reserva.ObterQuantidadeHospedes()}");
                 Console.WriteLine($"Dias na suite: {reserva.DiasReservados}");
-                Console.WriteLine($"Valor total: {reserva.CalcularValorDiaria()}");
-
+                Console.WriteLine($"Valor total: {reserva.CalcularValorDiaria()} \n");
             }
         }
         else
