@@ -27,5 +27,15 @@ public class Reserva : IReserva<List<Pessoa>, Suite>
 
     public int ObterQuantidadeHospedes() => Hospedes.Count;
 
-    public decimal CalcularValorDiaria() => (decimal) DiasReservados * Suite.ValorDiaria;
+    public decimal CalcularValorDiaria()
+    {
+        decimal valorTotal = DiasReservados * Suite.ValorDiaria;
+        if (DiasReservados > 10)
+        {
+            decimal valorDesconto = (valorTotal * 10) / 100;
+            return valorTotal - valorDesconto;
+            
+        }
+        return  valorTotal;
+    }
 }

@@ -8,7 +8,7 @@ Pessoa pessoaQuatro = new("Maria", "Silva");
 List<Pessoa> familia  = new(){pessoa, pessoaDois, pessoaTres, pessoaQuatro};
 Suite suite = new("familia", 4, 50.20M);
 
-IReserva<List<Pessoa>, Suite> reservaFamilia = new Reserva(10);
+IReserva<List<Pessoa>, Suite> reservaFamilia = new Reserva(12);
 reservaFamilia.CadastrarSuite(suite);
 reservaFamilia.CadastrarHospedes(familia);
 
