@@ -1,10 +1,10 @@
 using Interfaces;
 namespace Models;
 
-public class Hotel
+public class Hotel : IHotel
 {
-    private List<Suite> SuitesDisponiveis;
-    private List<Reserva> ReservasDoHotel;
+    private readonly List<Suite> SuitesDisponiveis;
+    private readonly List<Reserva> ReservasDoHotel;
 
     public Hotel()
     {
@@ -71,7 +71,7 @@ public class Hotel
                 Pessoa pessoa = new(nome: nome, sobrenome: sobrenome);
                 hospedes.Add(pessoa);
             }
-            Suite? suiteDisponivel = SuitesDisponiveis.Find(
+            Suite suiteDisponivel = SuitesDisponiveis.Find(
                                                 suite
                                                 => suite.Capacidade
                                                 >= quantidadeHospedes);
